@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
@@ -35,7 +35,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{background:"#3C4043"}}>
+    <AppBar sx={{background:"#3C4043"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Box sx={{ flexGrow: 1, display:"flex" , alignItems:"center", columnGap:2}}>
@@ -80,13 +80,6 @@ function Header() {
           </Typography>
 
           </Box>
-  
-
-
-
-  
-   
-    
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex', columnGap:20 } }}>
             {pages.map((page) => (
               <Button

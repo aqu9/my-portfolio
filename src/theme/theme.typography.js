@@ -26,7 +26,7 @@ const themeTypography = (theme) => {
     fontWeightMedium: 600,
     fontWeightRegular: 400,
     h1: {
-      fontSize: '2rem',
+      fontSize: '3rem',
       fontWeight: 700,
     },
     h2: {
