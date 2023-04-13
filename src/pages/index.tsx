@@ -6,9 +6,9 @@ export default function Home() {
         <>
             <Box sx={{height:"100vh"}}>
                 <Header />
-                <PersonalInfo />
+                <PersonalInfo/>
             </Box>
-            <Box sx={{height:"100vh", background:"red"}} ></Box>
+            <Box sx={{height:"100vh", background:"red"}} id="ABOUT"></Box>
         </>
     );
 }
