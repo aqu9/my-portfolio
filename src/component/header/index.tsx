@@ -36,7 +36,7 @@ function Header() {
     };
 
     return (
-        <AppBar sx={{ background: '#3C4043' }}>
+        <AppBar sx={{ background: '#3C4043', height:"70px" }}>
             <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', columnGap: 2 }}>

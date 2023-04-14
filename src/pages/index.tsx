@@ -5,11 +5,16 @@ import { Box } from "@mui/material";
 export default function Home() {
     return (
         <>
-            <Box sx={{height:"100vh"}}>
-                <Header />
+            <Header />
+            <Box sx={{height:"100vh",py:"70px"}} id="HOME">
                 <PersonalInfo/>
             </Box>
-            <Box sx={{height:"100vh", background:"#3C4043"}} id="ABOUT"><About /></Box>
+            <Box sx={{height:{xs:"auto", sm:"100vh"},py:"70px", background:"#3C4043"}} id="ABOUT">
+                <About />
+            </Box>
+            <Box sx={{height:"100vh",py:"70px"}} id="PROJECTS">
+                <PersonalInfo/>
+            </Box>
         </>
     );
 }

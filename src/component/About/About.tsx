@@ -4,8 +4,8 @@ const skills = ["HTML",  "CSS",  "JavaScript",  "React",  "SASS",  "GIT",  "Gith
 
 const About = () => {
   return (
-    <Box>
-      <Box sx={{ pt: 5, width: '100%' }}>
+    <Box sx={{height:"inherit"}}>
+      <Box sx={{width: '100%'}}>
         <Typography
           variant='h1'
           textAlign={'center'}
@@ -23,9 +23,9 @@ const About = () => {
         </Box>
       </Box>
       <Box sx={{ display: 'flex' ,flexDirection: { xs: 'column', sm: 'row' } }}>
-        <Box sx={{flex:1}}>
+        <Box sx={{width:{xs:"100%", sm:"50%"}}}>
           <Typography variant="h2">Get to know me!</Typography>
-          <Typography variant='h5'>
+          <Typography variant='h4'>
             I'm a Frontend Web Developer building the Front-end of Websites and
             Web Applications that leads to the success of the overall product.
             Check out some of my work in the Projects section. I also like
@@ -38,7 +38,7 @@ const About = () => {
             then don't hesitate to contact me.
           </Typography>
         </Box>
-        <Box sx={{flex:1}}>
+        <Box sx={{width:{xs:"100%", sm:"50%"}}}>
           {/* <Box sx={{display:'flex', gap:1}}> */}
 
           {

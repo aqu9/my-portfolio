@@ -4,7 +4,7 @@ import SideBar from '../Nav/SideBar';
 
 const PersonalInfo = () => {
     return (
-        <Box sx={{height: 'calc(100% - 70px)' }} id="HOME">
+        <Box sx={{height:"100%" }}>
             <Box sx={{position:"relative", top:"50%"}}>
                 <SideBar/>
             </Box>
