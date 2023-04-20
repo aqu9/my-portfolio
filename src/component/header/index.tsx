@@ -81,8 +81,8 @@ function Header() {
                         </Typography>
                     </Box>
                     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex', columnGap: 20 } }}>
-                        {pages.map((page) => (
-                            <Link href={`#${page}`}>{page}</Link>
+                        {pages.map((page, index) => (
+                            <Link key={index} href={`#${page}`}>{page}</Link>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
