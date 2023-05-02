@@ -89,7 +89,7 @@ function Header() {
               display: { xs: 'none', md: 'flex', columnGap: 20 },
             }}>
             {pages.map((page, index) => (
-              <Link key={index} href={`#${page}`}>
+              <Link key={index} href={`/#${page}`}>
                 {page}
               </Link>
             ))}
@@ -123,7 +123,7 @@ function Header() {
               }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link href={`#${page}`}>{page}</Link>
+                  <Link href={`/#${page}`}>{page}</Link>
                 </MenuItem>
               ))}
             </Menu>

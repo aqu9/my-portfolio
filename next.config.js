@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['example.com', 'www.bhphotovideo.com'],
+    domains: ['example.com', 'www.bhphotovideo.com','www.freecodecamp.org'],
     // add .svg extension to allow Next.js to handle SVG files
     extensions: ['png', 'jpg', 'jpeg', 'gif', 'svg'],
   },

@@ -1,10 +1,36 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Button, Divider, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 import Image from 'next/legacy/image';
 // import Image from 'next/image';
 
 const Project = [
   {
+    id:1,
+    companyName: 'valuebound',
+    client: 'EnsuredIT',
+    projName: 'Ice - 2.0',
+    startDate: 'jan 2015',
+    endDate: 'jan 2023',
+    techStack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'SASS',
+      'GIT',
+      'Github',
+      'Responsive Design',
+      'SEO',
+    ],
+    description:
+      'Dopefolio is a successful Open-Source project that I created which have been featured on some of the biggest tech sites like CSS-Tricks, Hostinger, etc & used by thousands of developers globally',
+    keyPoint: ['key', 'responsibilty', 'gello'],
+    image:
+      'https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png',
+  },
+  {
+    id:2,
     companyName: 'valuebound',
     client: 'EnsuredIT',
     projName: 'Ice - 2.0',
@@ -28,29 +54,7 @@ const Project = [
       'https://www.bhphotovideo.com/images/images2500x2500/apple_z0ub_mptr31_bh_macbook_pro_i7_3_1ghz_1343167.jpg',
   },
   {
-    companyName: 'valuebound',
-    client: 'EnsuredIT',
-    projName: 'Ice - 2.0',
-    startDate: 'jan 2015',
-    endDate: 'jan 2023',
-    techStack: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'React',
-      'SASS',
-      'GIT',
-      'Github',
-      'Responsive Design',
-      'SEO',
-    ],
-    description:
-      'Dopefolio is a successful Open-Source project that I created which have been featured on some of the biggest tech sites like CSS-Tricks, Hostinger, etc & used by thousands of developers globally',
-    keyPoint: ['key', 'responsibilty', 'gello'],
-    image:
-      'https://www.bhphotovideo.com/images/images2500x2500/apple_z0ub_mptr31_bh_macbook_pro_i7_3_1ghz_1343167.jpg',
-  },
-  {
+    id:3,
     companyName: 'valuebound',
     client: 'EnsuredIT',
     projName: 'Ice - 2.0',
@@ -74,15 +78,9 @@ const Project = [
       'https://www.bhphotovideo.com/images/images2500x2500/apple_z0ub_mptr31_bh_macbook_pro_i7_3_1ghz_1343167.jpg',
   },
 ];
-const hoverStyle = {
-  boxShadow: '0 19px 67px -38px hsla(225,2%,62%,.8)',
-  filter: 'blur(.2px)',
-  opacity: '1',
-  transform:
-    'perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg) scale(1)',
-};
 
 const Projects = () => {
+  const router = useRouter()
   return (
     <Box sx={{ height: 'inherit', mx: 25 }}>
       <Box sx={{ width: '100%' }}>
@@ -196,7 +194,7 @@ const Projects = () => {
                     my: 4,
                     justifyContent: 'center',
                   }}>
-                  <Button variant='contained' sx={{ px: 5, py: 2 }}>
+                  <Button variant='contained' sx={{ px: 5, py: 2 }} onClick={()=>router.push(`/project-detail/${elem.id}`)}>
                     <Typography variant='h3'>View Details</Typography>
                   </Button>
                 </Box>
