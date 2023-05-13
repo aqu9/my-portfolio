@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
+import { getProfile } from '@app/store/store';
 import { Box, Button, Divider, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
 import Image from 'next/legacy/image';
+import { useRouter } from 'next/router';
 // import Image from 'next/image';
 
 const Project = [
   {
-    id:1,
+    id: 1,
     companyName: 'valuebound',
     client: 'EnsuredIT',
     projName: 'Ice - 2.0',
@@ -30,7 +31,7 @@ const Project = [
       'https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png',
   },
   {
-    id:2,
+    id: 2,
     companyName: 'valuebound',
     client: 'EnsuredIT',
     projName: 'Ice - 2.0',
@@ -54,7 +55,7 @@ const Project = [
       'https://www.bhphotovideo.com/images/images2500x2500/apple_z0ub_mptr31_bh_macbook_pro_i7_3_1ghz_1343167.jpg',
   },
   {
-    id:3,
+    id: 3,
     companyName: 'valuebound',
     client: 'EnsuredIT',
     projName: 'Ice - 2.0',
@@ -80,7 +81,9 @@ const Project = [
 ];
 
 const Projects = () => {
-  const router = useRouter()
+  const profile = getProfile();
+
+  const router = useRouter();
   return (
     <Box sx={{ height: 'inherit', mx: 25 }}>
       <Box sx={{ width: '100%' }}>
@@ -99,14 +102,13 @@ const Projects = () => {
         />
         <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
           <Typography variant='h3' textAlign={'center'} sx={{ width: '70rem' }}>
-            Here you will find some of the personal and clients projects that I
-            created with each project containing its own case study
+            {profile?.projects?.projectHeader}
           </Typography>
         </Box>
       </Box>
 
       <Box>
-        {Project.map((elem: any, index: number) => {
+        {profile?.projects?.projects.map((elem: any, index: number) => {
           return (
             <Box
               key={index}
@@ -126,7 +128,7 @@ const Projects = () => {
                   overflow: 'hidden',
                 }}>
                 <Image
-                  src={elem.image}
+                  src={elem.mainImage}
                   alt='hello'
                   width={100}
                   height={60}
@@ -162,7 +164,7 @@ const Projects = () => {
                 <Typography
                   variant='h2'
                   sx={{ textAlign: 'center', textTransform: 'capitalize' }}>
-                  {elem.companyName}
+                  {elem.company}
                 </Typography>
                 <Divider
                   sx={{
@@ -186,7 +188,7 @@ const Projects = () => {
                     </Typography>
                   </Box>
                 </Box> */}
-                <Typography variant='h5'>{elem.description}</Typography>
+                <Typography variant='h5'>{elem.projectInfo}</Typography>
                 <Box
                   sx={{
                     width: '100%',
@@ -194,7 +196,10 @@ const Projects = () => {
                     my: 4,
                     justifyContent: 'center',
                   }}>
-                  <Button variant='contained' sx={{ px: 5, py: 2 }} onClick={()=>router.push(`/project-detail/${elem.id}`)}>
+                  <Button
+                    variant='contained'
+                    sx={{ px: 5, py: 2 }}
+                    onClick={() => router.push(`/project-detail/${elem.pId}`)}>
                     <Typography variant='h3'>View Details</Typography>
                   </Button>
                 </Box>

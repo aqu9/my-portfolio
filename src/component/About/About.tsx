@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { getProfile } from '@app/store/store';
 import { Box, Button, Chip, Divider, Typography } from '@mui/material';
 import Link from 'next/link';
 const skills = [
@@ -17,6 +18,8 @@ const skills = [
 ];
 
 const About = () => {
+  const profile = getProfile();
+
   return (
     <Box sx={{ height: 'inherit', mx: 25 }}>
       <Box sx={{ width: '100%' }}>
@@ -31,8 +34,7 @@ const About = () => {
         />
         <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
           <Typography variant='h3' textAlign={'center'} sx={{ width: '70rem' }}>
-            Here you will find more information about me, what I do, and my
-            current skills mostly in terms of programming and technology
+            {profile?.about?.aboutInfo}
           </Typography>
         </Box>
       </Box>
@@ -47,16 +49,7 @@ const About = () => {
             Get to know me!
           </Typography>
           <Typography variant='h4' sx={{ fontSize: '18px' }}>
-            I'm a Frontend Web Developer building the Front-end of Websites and
-            Web Applications that leads to the success of the overall product.
-            Check out some of my work in the Projects section. I also like
-            sharing content related to the stuff that I have learned over the
-            years in Web Development so it can help other people of the Dev
-            Community. Feel free to Connect or Follow me on my Linkedin where I
-            post useful content related to Web Development and Programming I'm
-            open to Job opportunities where I can contribute, learn and grow. If
-            you have a good opportunity that matches my skills and experience
-            then don't hesitate to contact me.
+            {profile?.about?.description}
           </Typography>
           <Box
             sx={{
@@ -77,7 +70,7 @@ const About = () => {
             My Skills
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-            {skills.map((skill, index) => {
+            {profile?.about?.skills.map((skill: string, index: any) => {
               return (
                 <Chip
                   key={index}

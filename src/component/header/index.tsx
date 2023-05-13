@@ -1,3 +1,4 @@
+import { getProfile } from '@app/store/store';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -16,6 +17,8 @@ const pages = ['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
+  const profile = getProfile();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -63,7 +66,7 @@ function Header() {
 
                 textDecoration: 'none',
               }}>
-              Iam HERE
+              {profile?.profileData?.name}
             </Typography>
             <Typography
               variant='h5'
@@ -80,7 +83,7 @@ function Header() {
                 color: 'inherit',
                 textDecoration: 'none',
               }}>
-              IAM Here
+              {profile?.profileData?.name}
             </Typography>
           </Box>
           <Box

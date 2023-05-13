@@ -1,8 +1,11 @@
+import { getProfile } from '@app/store/store';
 import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
 import SideBar from '../Nav/SideBar';
 
 const PersonalInfo = () => {
+  const profile = getProfile();
+
   return (
     <Box sx={{ height: '100%' }}>
       <Box sx={{ position: 'relative', top: '50%' }}>
@@ -18,14 +21,12 @@ const PersonalInfo = () => {
         }}>
         <Box>
           <Typography variant='h1' sx={{ textAlign: 'center' }}>
-            HEY, I'M Aquib Ahmad
+            HEY, I'M {profile?.profileData?.name}
           </Typography>
           <Typography
             variant='h3'
             sx={{ my: 5, mx: 5, textAlign: 'center', maxWidth: '90%' }}>
-            A Frontend focused Web Developer building the Frontend of Websites
-            and Web Applications that leads to the success of the overall
-            product
+            {profile?.profileData?.profileBio}
           </Typography>
           <Box
             sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
